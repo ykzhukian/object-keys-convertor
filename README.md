@@ -22,6 +22,19 @@ toCamelcase({
     aBC: true
   }
 }
+
+toSnakecase({
+  a_b_c: {
+    aB_C: true
+  }
+})
+
+// output
+{
+  a_b_c: {
+    a_b_c: true
+  }
+}
 ```
 
 Development
