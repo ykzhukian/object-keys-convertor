@@ -1,6 +1,5 @@
 {
   "presets": [
-    "airbnb",
     "@babel/env",
     "@babel/preset-typescript"
   ],
