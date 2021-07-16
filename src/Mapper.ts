@@ -16,10 +16,10 @@ export default class Mapper {
     Object.entries(currentVal).forEach(([key, value]) => {
       const convertor = new Convertor(key);
 
-      if (typeof value === 'object') {
-        obj[convertor.toCamelcase()] = this.toCamelcase(value);
-      } else if (Array.isArray(value)) {
+      if (Array.isArray(value)) {
         obj[convertor.toCamelcase()] = value.map((item) => this.toCamelcase(item));
+      } else if (typeof value === 'object') {
+        obj[convertor.toCamelcase()] = this.toCamelcase(value);
       } else {
         obj[convertor.toCamelcase()] = value;
       }
@@ -33,10 +33,10 @@ export default class Mapper {
     Object.entries(currentVal).forEach(([key, value]) => {
       const convertor = new Convertor(key);
 
-      if (typeof value === 'object') {
-        obj[convertor.toSnakecase()] = this.toSnakecase(value);
-      } else if (Array.isArray(value)) {
+      if (Array.isArray(value)) {
         obj[convertor.toSnakecase()] = value.map((item) => this.toSnakecase(item));
+      } else if (typeof value === 'object') {
+        obj[convertor.toSnakecase()] = this.toSnakecase(value);
       } else {
         obj[convertor.toSnakecase()] = value;
       }
