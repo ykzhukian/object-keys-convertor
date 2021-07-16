@@ -18,6 +18,8 @@ export default class Mapper {
 
       if (typeof value === 'object') {
         obj[convertor.toCamelcase()] = this.toCamelcase(value);
+      } else if (Array.isArray(value)) {
+        obj[convertor.toCamelcase()] = value.map((item) => this.toCamelcase(item));
       } else {
         obj[convertor.toCamelcase()] = value;
       }
@@ -33,6 +35,8 @@ export default class Mapper {
 
       if (typeof value === 'object') {
         obj[convertor.toSnakecase()] = this.toSnakecase(value);
+      } else if (Array.isArray(value)) {
+        obj[convertor.toSnakecase()] = value.map((item) => this.toSnakecase(item));
       } else {
         obj[convertor.toSnakecase()] = value;
       }
