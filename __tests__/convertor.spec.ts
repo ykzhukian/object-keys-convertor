@@ -10,6 +10,8 @@ describe('Convertor', () => {
   const item7 = new Convertor('b2b-c2c b2cC2b_');
   const item8 = new Convertor('23-b2b c2c b2c c2b123 322');
 
+  const tiem9 = new Convertor('123');
+
   test('Convertor.toCamelCase', () => {
     expect(item1.toCamelcase()).toBe('anakeBnakeCnake');
     expect(item2.toCamelcase()).toBe('snakeSnakeSnake');
@@ -19,6 +21,7 @@ describe('Convertor', () => {
     expect(item6.toCamelcase()).toBe('snakeSnake123');
     expect(item7.toCamelcase()).toBe('b2bC2cB2cC2b');
     expect(item8.toCamelcase()).toBe('23B2bC2cB2cC2b123322');
+    expect(tiem9.toCamelcase()).toBe('123');
   });
 
   test('Convertor.toSnakecase', () => {
