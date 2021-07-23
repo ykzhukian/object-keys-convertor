@@ -1,4 +1,5 @@
 import Convertor from '../src/Convertor';
+import { toCamelcaseStr, toSnakecaseStr } from '../src/index';
 
 describe('Convertor', () => {
   const item1 = new Convertor('anake-bnake-cnake');
@@ -33,5 +34,7 @@ describe('Convertor', () => {
     expect(item6.toSnakecase()).toBe('snake_snake_123');
     expect(item7.toSnakecase()).toBe('b2b_c2c_b2c_c2b');
     expect(item8.toSnakecase()).toBe('23_b2b_c2c_b2c_c2b123_322');
+
+    expect(toSnakecaseStr('anake-bnake-cnake')).toBe('anake_bnake_cnake');
   });
 });

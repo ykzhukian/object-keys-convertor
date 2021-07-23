@@ -20,7 +20,7 @@ export default class Mapper {
       const convertor = new Convertor(key);
 
       if (Array.isArray(value)) {
-        obj[convertor.toCamelcase()] = value.map((item) => this.toCamelcase(item));
+        obj[convertor.toCamelcase()] = value.map((item) => (typeof item === 'undefined' ? undefined : this.toCamelcase(item)));
       } else if (typeof value === 'object' && value !== null) {
         obj[convertor.toCamelcase()] = this.toCamelcase(value);
       } else {
@@ -40,7 +40,7 @@ export default class Mapper {
       const convertor = new Convertor(key);
 
       if (Array.isArray(value)) {
-        obj[convertor.toSnakecase()] = value.map((item) => this.toSnakecase(item));
+        obj[convertor.toSnakecase()] = value.map((item) => (typeof item === 'undefined' ? undefined : this.toSnakecase(item)));
       } else if (typeof value === 'object' && value !== null) {
         obj[convertor.toSnakecase()] = this.toSnakecase(value);
       } else {

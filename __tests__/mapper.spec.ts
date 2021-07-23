@@ -16,6 +16,13 @@ describe('Mapper', () => {
     },
   });
 
+  const item2 = new Mapper({
+    key_of_map: 1,
+    key_the_map: {
+      cool_cool: [123, undefined],
+    },
+  });
+
   test('Mapper.toCamelCase', () => {
     expect(item1.toCamelcase()).toEqual({
       keyOfMap: 1,
@@ -46,6 +53,15 @@ describe('Mapper', () => {
             },
           },
         },
+      },
+    });
+  });
+
+  test('Mapper.toSnakecaseArray', () => {
+    expect(item2.toSnakecase()).toEqual({
+      key_of_map: 1,
+      key_the_map: {
+        cool_cool: [123, undefined],
       },
     });
   });
